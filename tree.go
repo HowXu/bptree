@@ -303,11 +303,14 @@ func (t *Tree) findLeaf(key int, verbose bool) *Node {
 	}
 	for !c.IsLeaf {
 		if verbose {
-			fmt.Printf("[")
+			log("[")
+			//fmt.Printf("[")
 			for i = 0; i < c.NumKeys-1; i++ {
-				fmt.Printf("%d ", c.Keys[i])
+				log("%d ", c.Keys[i])
+				//fmt.Printf("%d ", c.Keys[i])
 			}
-			fmt.Printf("%d]", c.Keys[i])
+			log("%d]", c.Keys[i])
+			//fmt.Printf("%d]", c.Keys[i])
 		}
 		i = 0
 		for i < c.NumKeys {
