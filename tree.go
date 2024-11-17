@@ -296,7 +296,8 @@ func (t *Tree) findLeaf(key int, verbose bool) *Node {
 	c := t.Root
 	if c == nil {
 		if verbose {
-			fmt.Printf("Empty tree.\n")
+			log("Empty tree.\n")
+			//fmt.Printf("Empty tree.\n")
 		}
 		return c
 	}
@@ -317,16 +318,20 @@ func (t *Tree) findLeaf(key int, verbose bool) *Node {
 			}
 		}
 		if verbose {
-			fmt.Printf("%d ->\n", i)
+			log("%d ->\n", i)
+			//fmt.Printf("%d ->\n", i)
 		}
 		c, _ = c.Pointers[i].(*Node)
 	}
 	if verbose {
-		fmt.Printf("Leaf [")
+		log("Leaf [")
+		//fmt.Printf("Leaf [")
 		for i = 0; i < c.NumKeys-1; i++ {
-			fmt.Printf("%d ", c.Keys[i])
+			log("%d ", c.Keys[i])
+			//fmt.Printf("%d ", c.Keys[i])
 		}
-		fmt.Printf("%d] ->\n", c.Keys[i])
+		log("%d ", c.Keys[i])
+		//fmt.Printf("%d ", c.Keys[i])
 	}
 	return c
 }
